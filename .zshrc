@@ -35,7 +35,7 @@ ZSH_THEME="pygmalion"
 plugins=(rails git textmate ruby python)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bash_aliases
+source ~/.zsh_aliases
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:$HOME/.rvm/bin
