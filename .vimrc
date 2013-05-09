@@ -6,5 +6,3 @@ set cindent
 set tabstop=4
 set background=dark
 colorscheme solarized
-test
-hello
