@@ -43,5 +43,8 @@ export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:$HOME/.rvm/bin
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# use 1.9.3 as default ruby
+rvm use 1.9.3 --default
+
 # disable zsh autocorrect
 unsetopt correct_all
