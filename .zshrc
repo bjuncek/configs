@@ -46,6 +46,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # add path for adb
 export PATH="$PATH:/Users/chenglong/Development/adt-bundle-mac-x86_64-20130219/sdk/platform-tools"
 
+# use 1.9.3 as default ruby
+rvm use 1.9.3 --default
+
 # disable zsh autocorrect
 unsetopt correct_all
 
