@@ -18,3 +18,8 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
+
+#aliases for app servers
+alias cm='ssh chenglong@cm.buuuk.in'
+alias ap2='ssh chenglong@awsap2.buuukapps.com'
+alias smrt='ssh chenglong@smrt.buuuk.in'

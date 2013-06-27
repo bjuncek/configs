@@ -43,5 +43,10 @@ export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:$HOME/.rvm/bin
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# add path for adb
+export PATH="$PATH:/Users/chenglong/Development/adt-bundle-mac-x86_64-20130219/sdk/platform-tools"
+
 # disable zsh autocorrect
 unsetopt correct_all
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM 
