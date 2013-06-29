@@ -20,4 +20,4 @@ alias gpu='git pull'
 alias gcl='git clone'
 
 #aliases for amazon 
-alias startup='ssh ubuntu@ec2-54-218-74-205.us-west-2.compute.amazonaws.com'
+alias startup='ssh aws-startup'
