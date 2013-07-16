@@ -4,10 +4,10 @@
 mkdir -p ~/.vim/autoload ~/.vim/bundle; curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 # install vim solarized
-git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle
+git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
 
 # install nerdtree
-git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle
+git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
 # copy .vimrc from my github
 curl https://raw.github.com/ChengLong/configs/master/.vimrc > ~/.vimrc
