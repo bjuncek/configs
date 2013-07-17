@@ -43,8 +43,11 @@ export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:$HOME/.rvm/bin
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# add path for eb
+export PATH="$PATH:$HOME/Developer/AWS-ElasticBeanstalk-CLI-2.4.0/eb/macosx/python2.7"
+
 # add path for adb
-export PATH="$PATH:/Users/chenglong/Development/adt-bundle-mac-x86_64-20130219/sdk/platform-tools"
+export PATH="$PATH:$HOME/Development/adt-bundle-mac-x86_64-20130219/sdk/platform-tools"
 
 # disable zsh autocorrect
 unsetopt correct_all
