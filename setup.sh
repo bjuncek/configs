@@ -16,6 +16,28 @@
 #   3. zsh
 #   4. vim
 
+exists() {
+  if hash $1 2>/dev/null; then
+    return 0
+  else
+    echo "$1 doesn't exist"
+    return 1
+  fi
+}
+
+has_curl = exists curl
+has_git = exists git
+has_zsh = exists zsh
+has_vim = exists vim
+
+# check required libs exist
+if [ $has_curl && $has_git && $has_zsh && $has_vim ]; then
+  echo "All required libs exist..."
+else
+  echo "One or more of curl, git, zsh, vim is not installed. Exiting..."
+  exit 1
+fi
+
 # install pathogen
 if [ -f "$HOME/.vim/autoload/pathogen.vim" ]; then
   echo "Pathogen already installed."
