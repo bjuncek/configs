@@ -25,10 +25,17 @@ exists() {
   fi
 }
 
-has_curl = exists curl
-has_git = exists git
-has_zsh = exists zsh
-has_vim = exists vim
+exists curl
+has_curl=$?
+
+exists git
+has_git=$?
+
+exists zsh
+has_zsh=$?
+
+exists vim
+has_vim=$? 
 
 # check required libs exist
 if [ $has_curl && $has_git && $has_zsh && $has_vim ]; then
