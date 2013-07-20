@@ -38,7 +38,7 @@ exists vim
 has_vim=$? 
 
 # check required libs exist
-if [ $has_curl && $has_git && $has_zsh && $has_vim ]; then
+if [ $has_curl ] && [ $has_git ] && [ $has_zsh ] && [ $has_vim ]; then
   echo "All required libs exist..."
 else
   echo "One or more of curl, git, zsh, vim is not installed. Exiting..."
