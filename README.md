@@ -22,3 +22,6 @@ It will:
 
 ### Vim
 ![vim](/images/vim.png)
+
+### Zsh prompt
+![zsh](/images/zsh.png)
