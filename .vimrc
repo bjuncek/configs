@@ -42,6 +42,11 @@ set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
+" Set horizontal and Vertical Line 
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
+
 " Theme Solarized
 execute pathogen#infect()
 set background=dark
