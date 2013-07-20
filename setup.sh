@@ -82,4 +82,7 @@ curl https://raw.github.com/ChengLong/configs/master/.zshrc > ~/.zshrc
 # copy pygmalion.zsh-theme
 curl https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme > ~/.oh-my-zsh/themes/pygmalion.zsh-theme
 
+# copy .tmux.conf
+curl https://raw.github.com/ChengLong/configs/master/.tmux.conf > ~/.tmux.conf
+
 source ~/.zshrc
