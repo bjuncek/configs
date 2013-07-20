@@ -17,7 +17,7 @@
 #   4. vim
 
 # install pathogen
-if [ -f "$HOME/.vim/autoload/pathogen.vim"]; then
+if [ -f "$HOME/.vim/autoload/pathogen.vim" ]; then
   echo "Pathogen already installed."
 else
   echo "Installing pathogen"
