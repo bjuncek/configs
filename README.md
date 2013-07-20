@@ -25,3 +25,6 @@ It will:
 
 ### Zsh prompt
 ![zsh](/images/zsh.png)
+
+### Nerdtree
+![nerdtree](/images/nerdtree.png)
