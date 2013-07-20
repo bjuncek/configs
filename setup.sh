@@ -6,7 +6,9 @@
 #   3. Install Nerdtree for vim
 #   4. Set .vimrc to https://raw.github.com/ChengLong/configs/master/.vimrc
 #   5. Set .zsh_aliases to https://raw.github.com/ChengLong/configs/master/.zsh_aliases
-#   6. Source .zshrc
+#   6. Set .zshrc to https://raw.github.com/ChengLong/configs/master/.zshrc
+#   7. Set pygmalion.zsh-theme to https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme
+#   8. Source .zshrc
 #
 # It's assumed that these libs are already installed
 #   1. curl
@@ -19,7 +21,8 @@ if [ -f "$HOME/.vim/autoload/pathogen.vim"]; then
   echo "Pathogen already installed."
 else
   echo "Installing pathogen"
-  mkdir -p ~/.vim/autoload ~/.vim/bundle; curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+  mkdir -p ~/.vim/autoload ~/.vim/bundle
+  curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 fi
 
 # install vim solarized
@@ -43,5 +46,11 @@ curl https://raw.github.com/ChengLong/configs/master/.vimrc > ~/.vimrc
 
 # copy aliases
 curl https://raw.github.com/ChengLong/configs/master/.zsh_aliases > ~/.zsh_aliases
+
+# copy .zshrc
+curl https://raw.github.com/ChengLong/configs/master/.zshrc > ~/.zshrc
+
+# copy pygmalion.zsh-theme
+curl https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme > ~/.oh-my-zsh/themes/pygmalion.zsh-theme
 
 source ~/.zshrc
