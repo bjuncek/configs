@@ -18,3 +18,6 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
+
+# rsync
+alias sy='rsync -rtvz --delete '
