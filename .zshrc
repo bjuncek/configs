@@ -53,6 +53,3 @@ export PATH="$PATH:$HOME/Development/adt-bundle-mac-x86_64-20130219/sdk/platform
 unsetopt correct_all
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM 
-
-# default ruby version
-rvm use 2.0.0
