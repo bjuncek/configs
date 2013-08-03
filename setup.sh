@@ -86,3 +86,4 @@ curl https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme > ~/.oh
 curl https://raw.github.com/ChengLong/configs/master/.tmux.conf > ~/.tmux.conf
 
 source ~/.zshrc
+tmux source-file ~/.tmux.conf
