@@ -1,6 +1,6 @@
 alias c="clear"
-alias l="ls"
-alias ll="ls -al"
+alias l="ls -p"
+alias ll="ls -alp"
 
 #aliases for git
 alias ga='git add'
