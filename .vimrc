@@ -3,6 +3,9 @@ set nocompatible
 syntax on
 set nu
 
+" use F2 to toggle paste mode
+set pastetoggle=<F2>
+
 " ================ Turn Off Swap Files ==============
 set noswapfile
 set nobackup
