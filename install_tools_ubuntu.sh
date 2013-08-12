@@ -12,6 +12,3 @@ chsh -s $(which zsh)
 
 # install rvm
 \curl -L https://get.rvm.io | bash
-
-# install ruby 2.0.0
-rvm install 2.0.0
