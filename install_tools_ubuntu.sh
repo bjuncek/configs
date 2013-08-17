@@ -5,7 +5,7 @@ sudo apt-get update && sudo apt-get install -y git
 sudo apt-get install -y curl
 
 # install ack
-sudo apt-get install -y ack
+sudo apt-get install -y ack-grep
 
 # install zsh
 sudo apt-get install -y zsh
