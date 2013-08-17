@@ -1,6 +1,12 @@
 # install git
 sudo apt-get update && sudo apt-get install -y git
 
+# install curl
+sudo apt-get install -y curl
+
+# install ack
+sudo apt-get install -y ack
+
 # install zsh
 sudo apt-get install -y zsh
 

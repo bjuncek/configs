@@ -1,20 +1,23 @@
 #!/bin/sh
 
 # This script is used to:
-#   1. Install Pathogen if necessary
-#   2. Install Vim solarized
-#   3. Install Nerdtree for vim
-#   4. Set .vimrc to https://raw.github.com/ChengLong/configs/master/.vimrc
-#   5. Set .zsh_aliases to https://raw.github.com/ChengLong/configs/master/.zsh_aliases
-#   6. Set .zshrc to https://raw.github.com/ChengLong/configs/master/.zshrc
-#   7. Set pygmalion.zsh-theme to https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme
-#   8. Source .zshrc
+#   Install Pathogen if necessary
+#   Install Vim solarized
+#   Install Nerdtree for vim
+#   Install Ack for vim
+#   Set .vimrc to https://raw.github.com/ChengLong/configs/master/.vimrc
+#   Set .zsh_aliases to https://raw.github.com/ChengLong/configs/master/.zsh_aliases
+#   Set .zshrc to https://raw.github.com/ChengLong/configs/master/.zshrc
+#   Set pygmalion.zsh-theme to https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme
+#   Source .zshrc
+#   Source tmux config
 #
 # It's assumed that these libs are already installed
 #   1. curl
 #   2. git
 #   3. zsh
 #   4. vim
+#   5. ack
 
 exists() {
   if hash $1 2>/dev/null; then
@@ -35,13 +38,16 @@ exists zsh
 has_zsh=$?
 
 exists vim
-has_vim=$? 
+has_vim=$?
+
+exists ack 
+has_ack=$?
 
 # check required libs exist
-if [ $has_curl ] && [ $has_git ] && [ $has_zsh ] && [ $has_vim ]; then
+if [ $has_curl ] && [ $has_git ] && [ $has_zsh ] && [ $has_vim ] && [ $has_ack ]; then
   echo "All required libs exist..."
 else
-  echo "One or more of curl, git, zsh, vim is not installed. Exiting..."
+  echo "One or more of curl, git, zsh, vim, ack is not installed. Exiting..."
   exit 1
 fi
 
@@ -69,6 +75,19 @@ else
   echo "Installing Nerdtree"
   git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 fi
+
+# install ack.vim 
+if [ -f "$HOME/.vim/plugin/ack.vim" ]; then
+  echo "ack.vim already installed"
+else
+  echo "Installing ack.vim"
+  git clone https://github.com/mileszs/ack.vim.git ~/ack.vim
+  mkdir -p ~/.vim/doc
+  mkdir -p ~/.vim/plugin
+  cp ~/ack.vim/doc/ack.txt ~/.vim/doc
+  cp ~/ack.vim/plugin/ack.vim ~/.vim/plugin
+fi
+
 
 # copy .vimrc from my github
 curl https://raw.github.com/ChengLong/configs/master/.vimrc > ~/.vimrc
