@@ -3,6 +3,9 @@ set nocompatible
 syntax on
 set nu
 
+" Map leader key to ',' for Command-T
+let mapleader = ','
+
 " use F2 to toggle paste mode
 set pastetoggle=<F2>
 
