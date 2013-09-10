@@ -15,6 +15,3 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 
 # Make ZSH default
 chsh -s $(which zsh)
-
-# install rvm
-\curl -L https://get.rvm.io | bash
