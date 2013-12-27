@@ -40,14 +40,14 @@ has_zsh=$?
 exists vim
 has_vim=$?
 
-exists ack 
+exists ack-grep 
 has_ack=$?
 
 # check required libs exist
 if [ $has_curl ] && [ $has_git ] && [ $has_zsh ] && [ $has_vim ] && [ $has_ack ]; then
   echo "All required libs exist..."
 else
-  echo "One or more of curl, git, zsh, vim, ack is not installed. Exiting..."
+  echo "One or more of curl, git, zsh, vim, ack-grep is not installed. Exiting..."
   exit 1
 fi
 
