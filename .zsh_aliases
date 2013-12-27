@@ -21,3 +21,6 @@ alias gcl='git clone'
 
 # rsync
 alias sy='rsync -rtvz --delete '
+
+# to prevent zsh from complainting rake new_page[pagename]
+alias rake='noglob rake'
