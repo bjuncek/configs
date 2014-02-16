@@ -62,3 +62,6 @@ colorscheme solarized
 
 " NerdTree config
 let g:NERDTreeDirArrows=0
+
+" make backspace work like most other apps
+set backspace=2 
