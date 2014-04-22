@@ -13,6 +13,7 @@ It will:
 * Install [Vim solarized](https://github.com/altercation/vim-colors-solarized)
 * Install [Nerdtree](https://github.com/scrooloose/nerdtree) for vim
 * Install [ack.vim](https://github.com/mileszs/ack.vim) for vim
+* Install [AutoComplPop](https://github.com/vim-scripts/AutoComplPop) for vim
 * Copy my [.vimrc](https://raw.github.com/ChengLong/configs/master/.vimrc) to your .vimrc
 * Copy my [.zsh_aliases](https://raw.github.com/ChengLong/configs/master/.zsh_aliases) to your .zsh_aliases
 * Copy my [.zshrc](https://raw.github.com/ChengLong/configs/master/.zshrc) to your .zshrc
