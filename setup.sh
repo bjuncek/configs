@@ -5,6 +5,7 @@
 #   Install Vim solarized
 #   Install Nerdtree for vim
 #   Install Ack for vim
+#   Install AutoComplPop
 #   Set .vimrc to https://raw.github.com/ChengLong/configs/master/.vimrc
 #   Set .zsh_aliases to https://raw.github.com/ChengLong/configs/master/.zsh_aliases
 #   Set .zshrc to https://raw.github.com/ChengLong/configs/master/.zshrc
@@ -74,6 +75,14 @@ if [ -d "$HOME/.vim/bundle/nerdtree" ]; then
 else
   echo "Installing Nerdtree"
   git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+fi
+
+# install nerdtree
+if [ -d "$HOME/.vim/bundle/AutoComplPop" ]; then
+  echo "AutoComplPop already installed"
+else
+  echo "Installing AutoComplPop"
+  git clone https://github.com/vim-scripts/AutoComplPop.git ~/.vim/bundle/AutoComplPop
 fi
 
 # install ack.vim 
