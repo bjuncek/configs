@@ -58,7 +58,7 @@ if [ -f "$HOME/.vim/autoload/pathogen.vim" ]; then
 else
   echo "Installing pathogen"
   mkdir -p ~/.vim/autoload ~/.vim/bundle
-  curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+  curl -LSso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 fi
 
 # install vim solarized
@@ -99,19 +99,19 @@ fi
 
 
 # copy .vimrc from my github
-curl https://raw.github.com/ChengLong/configs/master/.vimrc > ~/.vimrc
+curl -LSso ~/.vimrc https://raw.github.com/ChengLong/configs/master/.vimrc
 
 # copy aliases
-curl https://raw.github.com/ChengLong/configs/master/.zsh_aliases > ~/.zsh_aliases
+curl -LSso ~/.zsh_aliases https://raw.github.com/ChengLong/configs/master/.zsh_aliases 
 
 # copy .zshrc
-curl https://raw.github.com/ChengLong/configs/master/.zshrc > ~/.zshrc
+curl -LSso ~/.zshrc https://raw.github.com/ChengLong/configs/master/.zshrc
 
 # copy pygmalion.zsh-theme
-curl https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme > ~/.oh-my-zsh/themes/pygmalion.zsh-theme
+curl -LSso ~/.oh-my-zsh/themes/pygmalion.zsh-theme https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme
 
 # copy .tmux.conf
-curl https://raw.github.com/ChengLong/configs/master/.tmux.conf > ~/.tmux.conf
+curl -LSso ~/.tmux.conf https://raw.github.com/ChengLong/configs/master/.tmux.conf
 
 source ~/.zshrc
 tmux source-file ~/.tmux.conf
