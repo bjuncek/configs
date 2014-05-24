@@ -1,5 +1,11 @@
+# install ruby 2.1
+sudo apt-get install -y python-software-properties
+sudo apt-add-repository ppa:brightbox/ruby-ng
+sudo apt-get update
+sudo apt-get install -y ruby2.1
+
 # install git
-sudo apt-get update && sudo apt-get install -y git
+sudo apt-get install -y git
 
 # install curl
 sudo apt-get install -y curl
