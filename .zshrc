@@ -37,8 +37,11 @@ plugins=(rails git textmate ruby python)
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_aliases
 
+# disable zsh autocorrect
+unsetopt correct_all
+
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:$HOME/.rvm/bin
+export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 
 # use local aliases if exists
 if [ -f "$HOME/.zsh_local_aliases" ]
@@ -51,8 +54,3 @@ if [ -f "$HOME/.zsh_local_config" ]
 then
   source ~/.zsh_local_config
 fi
-
-# disable zsh autocorrect
-unsetopt correct_all
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM 
