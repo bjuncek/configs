@@ -86,17 +86,12 @@ else
 fi
 
 # install ack.vim 
-if [ -f "$HOME/.vim/plugin/ack.vim" ]; then
+if [ -f "$HOME/.vim/bundle/ack.vim" ]; then
   echo "ack.vim already installed"
 else
   echo "Installing ack.vim"
-  git clone https://github.com/mileszs/ack.vim.git ~/ack.vim
-  mkdir -p ~/.vim/doc
-  mkdir -p ~/.vim/plugin
-  cp ~/ack.vim/doc/ack.txt ~/.vim/doc
-  cp ~/ack.vim/plugin/ack.vim ~/.vim/plugin
+  git clone https://github.com/vim-scripts/ack.vim.git ~/.vim/bundle/ack.vim 
 fi
-
 
 # copy .vimrc from my github
 curl -LSso ~/.vimrc https://raw.github.com/ChengLong/configs/master/.vimrc
