@@ -37,11 +37,12 @@ plugins=(rails git textmate ruby python)
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_aliases
 
+# Customize to your needs...
+homebrew=/usr/local/bin:/usr/local/sbin
+export PATH=$homebrew:$PATH
+
 # disable zsh autocorrect
 unsetopt correct_all
-
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 
 # use local aliases if exists
 if [ -f "$HOME/.zsh_local_aliases" ]
