@@ -5,7 +5,7 @@ These are some dotfiles that I use very often. If you like [zsh](http://www.zsh.
 (prerequisites: curl, git, vim, ack, zsh)
 
 ```shell
-curl https://raw.github.com/ChengLong/configs/master/setup.sh | zsh
+curl https://raw.githubusercontent.com/ChengLong/configs/master/setup.sh | zsh
 ```
 
 It will:
