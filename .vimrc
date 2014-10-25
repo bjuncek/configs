@@ -3,7 +3,7 @@ set nocompatible
 syntax on
 set nu
 
-" Map leader key to ',' for Command-T
+" Map leader key to ',' for Command-T and nerdcommenter
 let mapleader = ','
 
 " use F2 to toggle paste mode

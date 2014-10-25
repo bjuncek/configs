@@ -4,6 +4,7 @@
 #   Install Pathogen if necessary
 #   Install Vim solarized
 #   Install Nerdtree for vim
+#   Install nerdcommenter for vim
 #   Install Ack for vim
 #   Install AutoComplPop
 #   Set .vimrc to https://raw.github.com/ChengLong/configs/master/.vimrc
@@ -75,6 +76,14 @@ if [ -d "$HOME/.vim/bundle/nerdtree" ]; then
 else
   echo "Installing Nerdtree"
   git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+fi
+
+# install nerdcommenter 
+if [ -d "$HOME/.vim/bundle/nerdcommenter" ]; then
+  echo "nerdcommenter already installed"
+else
+  echo "Installing nerdcommenter"
+  git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
 fi
 
 # install nerdtree

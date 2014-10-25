@@ -12,6 +12,7 @@ It will:
 * Install [Pathogen](https://github.com/tpope/vim-pathogen) if necessary
 * Install [Vim solarized](https://github.com/altercation/vim-colors-solarized)
 * Install [Nerdtree](https://github.com/scrooloose/nerdtree) for vim
+* Install [nerdcommenter](https://github.com/scrooloose/nerdcommenter) for vim
 * Install [ack.vim](https://github.com/mileszs/ack.vim) for vim
 * Install [AutoComplPop](https://github.com/vim-scripts/AutoComplPop) for vim
 * Copy my [.vimrc](https://raw.github.com/ChengLong/configs/master/.vimrc) to your .vimrc
