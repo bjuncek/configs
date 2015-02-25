@@ -5,8 +5,8 @@
 #   Install Vim solarized
 #   Install Nerdtree for vim
 #   Install nerdcommenter for vim
-#   Install Ack for vim
 #   Install AutoComplPop
+#   Install vim-fugitive
 #   Set .vimrc to https://raw.github.com/ChengLong/configs/master/.vimrc
 #   Set .zsh_aliases to https://raw.github.com/ChengLong/configs/master/.zsh_aliases
 #   Set .zshrc to https://raw.github.com/ChengLong/configs/master/.zshrc
@@ -86,7 +86,7 @@ else
   git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
 fi
 
-# install nerdtree
+# install AutoComplPop 
 if [ -d "$HOME/.vim/bundle/AutoComplPop" ]; then
   echo "AutoComplPop already installed"
 else
@@ -94,12 +94,12 @@ else
   git clone https://github.com/vim-scripts/AutoComplPop.git ~/.vim/bundle/AutoComplPop
 fi
 
-# install ack.vim 
-if [ -f "$HOME/.vim/bundle/ack.vim" ]; then
-  echo "ack.vim already installed"
+# install vim-fugitive 
+if [ -d "$HOME/.vim/bundle/vim-fugitive" ]; then
+  echo "vim-fugitive already installed"
 else
-  echo "Installing ack.vim"
-  git clone https://github.com/vim-scripts/ack.vim.git ~/.vim/bundle/ack.vim 
+  echo "Installing vim-fugitive"
+  git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
 fi
 
 # copy .vimrc from my github
