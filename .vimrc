@@ -65,3 +65,12 @@ let g:NERDTreeDirArrows=0
 
 " make backspace work like most other apps
 set backspace=2 
+
+" ================ Relative Line Number =================
+nnoremap <silent><leader>r :set relativenumber!<cr> " Toggle relative line number
+
+" use absolute number in insert mode
+autocmd InsertEnter * :set norelativenumber | set number
+autocmd InsertLeave * :set relativenumber
+
+set relativenumber " use relativenumber by default
