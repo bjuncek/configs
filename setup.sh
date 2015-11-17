@@ -7,6 +7,7 @@
 #   Install nerdcommenter for vim
 #   Install AutoComplPop
 #   Install vim-fugitive
+#   Install ctrlp
 #   Set .vimrc to https://raw.github.com/ChengLong/configs/master/.vimrc
 #   Set .zsh_aliases to https://raw.github.com/ChengLong/configs/master/.zsh_aliases
 #   Set .zshrc to https://raw.github.com/ChengLong/configs/master/.zshrc
@@ -100,6 +101,13 @@ if [ -d "$HOME/.vim/bundle/vim-fugitive" ]; then
 else
   echo "Installing vim-fugitive"
   git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
+fi
+
+if [ -d "$HOME/.vim/bundle/ctrlp.vim" ]; then
+  echo "ctrlp already installed"
+else
+  echo "Installing ctrlp"
+  git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 fi
 
 # copy .vimrc from my github
