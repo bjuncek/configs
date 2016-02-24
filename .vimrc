@@ -50,7 +50,7 @@ set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
-" Set horizontal and Vertical Line 
+" Set horizontal and Vertical Line
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
@@ -64,7 +64,7 @@ colorscheme solarized
 let g:NERDTreeDirArrows=0
 
 " make backspace work like most other apps
-set backspace=2 
+set backspace=2
 
 " ================ Relative Line Number =================
 nnoremap <silent><leader>r :set relativenumber!<cr> " Toggle relative line number
@@ -74,3 +74,7 @@ autocmd InsertEnter * :set norelativenumber | set number
 autocmd InsertLeave * :set relativenumber
 
 set relativenumber " use relativenumber by default
+
+" strip whitespace on save
+autocmd BufWritePre * StripWhitespace
+

@@ -8,6 +8,7 @@
 #   Install AutoComplPop
 #   Install vim-fugitive
 #   Install ctrlp
+#   Install vim-better-whitespace
 #   Set .vimrc to https://raw.github.com/ChengLong/configs/master/.vimrc
 #   Set .zsh_aliases to https://raw.github.com/ChengLong/configs/master/.zsh_aliases
 #   Set .zshrc to https://raw.github.com/ChengLong/configs/master/.zshrc
@@ -43,7 +44,7 @@ has_zsh=$?
 exists vim
 has_vim=$?
 
-exists ack-grep 
+exists ack-grep
 has_ack=$?
 
 # check required libs exist
@@ -79,7 +80,7 @@ else
   git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 fi
 
-# install nerdcommenter 
+# install nerdcommenter
 if [ -d "$HOME/.vim/bundle/nerdcommenter" ]; then
   echo "nerdcommenter already installed"
 else
@@ -87,7 +88,7 @@ else
   git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
 fi
 
-# install AutoComplPop 
+# install AutoComplPop
 if [ -d "$HOME/.vim/bundle/AutoComplPop" ]; then
   echo "AutoComplPop already installed"
 else
@@ -95,7 +96,7 @@ else
   git clone https://github.com/vim-scripts/AutoComplPop.git ~/.vim/bundle/AutoComplPop
 fi
 
-# install vim-fugitive 
+# install vim-fugitive
 if [ -d "$HOME/.vim/bundle/vim-fugitive" ]; then
   echo "vim-fugitive already installed"
 else
@@ -110,11 +111,18 @@ else
   git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 fi
 
+if [ -d "$HOME/.vim/bundle/vim-better-whitespace" ]; then
+  echo "vim-better-whitespace already installed"
+else
+  echo "Installing vim-better-whitespace"
+  git clone https://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/vim-better-whitespace
+fi
+
 # copy .vimrc from my github
 curl -LSso ~/.vimrc https://raw.github.com/ChengLong/configs/master/.vimrc
 
 # copy aliases
-curl -LSso ~/.zsh_aliases https://raw.github.com/ChengLong/configs/master/.zsh_aliases 
+curl -LSso ~/.zsh_aliases https://raw.github.com/ChengLong/configs/master/.zsh_aliases
 
 # copy .zshrc
 curl -LSso ~/.zshrc https://raw.github.com/ChengLong/configs/master/.zshrc
@@ -127,3 +135,4 @@ curl -LSso ~/.tmux.conf https://raw.github.com/ChengLong/configs/master/.tmux.co
 
 source ~/.zshrc
 tmux source-file ~/.tmux.conf
+
