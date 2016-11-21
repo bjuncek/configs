@@ -40,6 +40,9 @@ source ~/.zsh_aliases
 # disable zsh autocorrect
 unsetopt correct_all
 
+# zsh and rake https://robots.thoughtbot.com/how-to-use-arguments-in-a-rake-task
+unsetopt nomatch
+
 # use local aliases if exists
 if [ -f "$HOME/.zsh_local_aliases" ]
 then
