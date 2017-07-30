@@ -16,6 +16,7 @@ It will:
 * Install [AutoComplPop](https://github.com/vim-scripts/AutoComplPop) for vim
 * Install [ctrlp.vim](https://github.com/kien/ctrlp.vim) for vim
 * Install [vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace) for vim
+* Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * Copy my [.vimrc](https://raw.github.com/ChengLong/configs/master/.vimrc) to your .vimrc
 * Copy my [.zsh_aliases](https://raw.github.com/ChengLong/configs/master/.zsh_aliases) to your .zsh_aliases
 * Copy my [.zshrc](https://raw.github.com/ChengLong/configs/master/.zshrc) to your .zshrc

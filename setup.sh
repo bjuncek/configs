@@ -9,6 +9,7 @@
 #   Install vim-fugitive
 #   Install ctrlp
 #   Install vim-better-whitespace
+#   Install oh-my-zsh
 #   Set .vimrc to https://raw.github.com/ChengLong/configs/master/.vimrc
 #   Set .zsh_aliases to https://raw.github.com/ChengLong/configs/master/.zsh_aliases
 #   Set .zshrc to https://raw.github.com/ChengLong/configs/master/.zshrc
@@ -112,6 +113,13 @@ if [ -d "$HOME/.vim/bundle/vim-better-whitespace" ]; then
 else
   echo "Installing vim-better-whitespace"
   git clone https://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/vim-better-whitespace
+fi
+
+if [ -d "$HOME/.oh-my-zsh" ]; then
+  echo "oh-my-zsh already installed"
+else
+  echo "Installing oh-my-zsh"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
 # copy .vimrc from my github
