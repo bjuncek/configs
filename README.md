@@ -6,8 +6,6 @@ These are some dotfiles that I use very often. If you like [zsh](http://www.zsh.
 
     curl https://raw.githubusercontent.com/ChengLong/configs/master/setup.sh | zsh
 
-Note that you should have `zsh` [installed](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) before running the above.
-
 It will:
 
 * Install [Pathogen](https://github.com/tpope/vim-pathogen) if necessary
