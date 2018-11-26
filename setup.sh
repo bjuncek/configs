@@ -126,16 +126,13 @@ fi
 curl -LSso ~/.vimrc https://raw.github.com/ChengLong/configs/master/.vimrc
 
 # copy aliases
-curl -LSso ~/.zsh_aliases https://raw.github.com/ChengLong/configs/master/.zsh_aliases
+curl -LSso ~/.zsh_aliases https://raw.github.com/bjuncek/configs/master/.zsh_aliases
 
 # copy .zshrc
-curl -LSso ~/.zshrc https://raw.github.com/ChengLong/configs/master/.zshrc
-
-# copy pygmalion.zsh-theme
-curl -LSso ~/.oh-my-zsh/themes/pygmalion.zsh-theme https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme
+curl -LSso ~/.zshrc https://raw.github.com/bjuncek/configs/master/.zshrc
 
 # copy .tmux.conf
-curl -LSso ~/.tmux.conf https://raw.github.com/ChengLong/configs/master/.tmux.conf
+curl -LSso ~/.tmux.conf https://raw.github.com/bjuncek/configs/master/.tmux.conf
 
 source ~/.zshrc
 tmux source-file ~/.tmux.conf
