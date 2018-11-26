@@ -1,74 +1,84 @@
-" General Config
-set nocompatible
-syntax on
-set nu
+source $ADMIN_SCRIPTS/master.vimrc
 
-" Map leader key to ',' for Command-T and nerdcommenter
-let mapleader = ','
+autocmd! bufwritepost .vimrc source %
 
-" use F2 to toggle paste mode
-set pastetoggle=<F2>
-
-" ================ Turn Off Swap Files ==============
-set noswapfile
-set nobackup
-set nowb
-
-" ================ Persistent Undo ==================
-" " Keep undo history across sessions, by storing in file.
-" " Only works all the time.
-silent !mkdir ~/.vim/backups > /dev/null 2>&1
-if v:version >= 703
-  set undodir=~/.vim/backups
-  set undofile
-endif
-
-" Indentation
-set autoindent
-set smartindent
-set smarttab
-set shiftwidth=4
-set softtabstop=0
-set tabstop=4
-set expandtab
-
-filetype plugin on
-filetype indent on
-
-set nowrap       "Don't wrap lines
-set linebreak    "Wrap lines at convenient points
-
-" ================ Folds ============================
-"
-set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
-
-" ================ Scrolling ========================
-"
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
-set sidescrolloff=15
-set sidescroll=1
-
-" Set horizontal and Vertical Line
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
-set cursorline cursorcolumn
-
-" Theme Solarized
-execute pathogen#infect()
 set background=dark
 colorscheme solarized
+"colorscheme desert
 
-" NerdTree config
-let g:NERDTreeDirArrows=0
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
-" make backspace work like most other apps
-set backspace=2
+if has("autocmd")
+  filetype plugin indent on
+ endif
 
+  set showcmd
+  set showmatch
+  set ignorecase
+  set smartcase
+  set incsearch
+  set autowrite
+  set hidden
+  set mouse=a
 
-" strip whitespace on save
-autocmd BufWritePre * StripWhitespace
+  syntax enable
 
-" Ignore files in .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+  map <C-j> <C-w>j
+  map <C-h> <C-w>h
+  map <C-k> <C-w>k
+  map <C-l> <C-w>l
+
+  set shiftwidth=4
+  set tabstop=4
+  set softtabstop=4
+  set expandtab
+  set smarttab
+
+  set backspace=2
+  set number
+  set showcmd
+  set showmode
+  set hlsearch
+  set incsearch
+  set scrolloff=5
+  set tw=79
+
+  "call pathogen#incubate()
+  "call pathogen#infect()
+  "call pathogen#helptags()
+
+  highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+  match OverLength /\%>80v.\+/
+
+  set dictionary=/usr/share/dict/words
+
+  set tags=tags;/
+  set tags +=~/.vim/qttags
+
+  au FileType make    setlocal noexpandtab
+  au FileType pyhton  set tabstop=2|set shiftwidth=4|set expandtab
+  au FileType php     set tabstop=2|set shiftwidth=2|set expandtab
+  au FileType *       set formatoptions+=tcq
+
+  map <C-p> <ESC>:w<CR>:!<UP><CR>
+
+  fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+      let c = col(".")
+        %s/\s\+$//e
+          call cursor(l, c)
+          endfun
+
+          autocmd FileType cpp,java,php,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+          " Set the status line the way i like it
+          set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\Buf:#%n\[%b][0x%B]
+          " tell VIM to always put a status line in, even if there is only
+          " one window
+          set laststatus=2
+
+          nmap <Leader>t :Unite -start-insert monocle<CR>
+          nmap <C-]> :UniteWithCursorWord -start-insert monocle<CR>
+         nmap <C-t> <C-o>
