@@ -124,7 +124,7 @@ fi
 
 # copy .vimrc from my github
 curl -LSso ~/.vimrc https://raw.github.com/ChengLong/configs/master/.vimrc
-
+echo "vimrc done"
 # copy aliases
 curl -LSso ~/.zsh_aliases https://raw.github.com/bjuncek/configs/master/.zsh_aliases
 
@@ -133,6 +133,7 @@ curl -LSso ~/.zshrc https://raw.github.com/bjuncek/configs/master/.zshrc
 
 # copy .tmux.conf
 curl -LSso ~/.tmux.conf https://raw.github.com/bjuncek/configs/master/.tmux.conf
+echo " tmux done"
 
 source ~/.zshrc
 tmux source-file ~/.tmux.conf

@@ -27,9 +27,9 @@ endif
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=0
+set tabstop=4
 set expandtab
 
 filetype plugin on
@@ -66,14 +66,6 @@ let g:NERDTreeDirArrows=0
 " make backspace work like most other apps
 set backspace=2
 
-" ================ Relative Line Number =================
-nnoremap <silent><leader>r :set relativenumber!<cr> " Toggle relative line number
-
-" use absolute number in insert mode
-autocmd InsertEnter * :set norelativenumber | set number
-autocmd InsertLeave * :set relativenumber
-
-set relativenumber " use relativenumber by default
 
 " strip whitespace on save
 autocmd BufWritePre * StripWhitespace
