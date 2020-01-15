@@ -160,11 +160,11 @@ else
   echo "Setting up bin homebrew"
   git clone https://github.com/Homebrew/brew ~/.brew
   echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> ~/.zshrc
-  source ~/.zshrc
-  brew update
-  brew install tmux
 fi
-
 source ~/.zshrc
+
+brew update
+brew install tmux
+
 tmux source-file ~/.tmux.conf
 
