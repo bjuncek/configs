@@ -115,7 +115,6 @@ else
   git clone https://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/vim-better-whitespace
 fi
 
-
 if [ -d "$HOME/bin" ]; then
   echo "BinDir already initialized"
 else
@@ -152,6 +151,16 @@ curl -LSso ~/.zshrc https://raw.github.com/bjuncek/configs/master/.zshrc
 # copy .tmux.conf
 curl -LSso ~/.tmux.conf https://raw.github.com/bjuncek/configs/master/.tmux.conf
 echo " tmux done"
+
+# setup homebrew if mac
+if [ -d "$HOME/.brew" ]; then
+  echo "Brew already initialized"
+else
+  echo "Setting up bin homebrew"
+  git clone https://github.com/Homebrew/brew ~/.brew
+  echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> ~/.zshrc
+  brew update
+fi
 
 source ~/.zshrc
 tmux source-file ~/.tmux.conf
