@@ -1,0 +1,14 @@
+Host *
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa
+Host devfair
+        Hostname 100.97.73.170
+        ProxyJump prn-fairjmp02
+Host vc_work
+        Hostname localhost
+        Port 1234
+Host df_home
+        Hostname 100.97.73.170
+Host vc_home
+        Hostname df_home
