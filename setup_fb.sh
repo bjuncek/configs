@@ -15,6 +15,8 @@ curl -LSso ~/.ssh/config https://raw.github.com/bjuncek/configs/master/fb_ssh_co
 
 # add ssh keys where applicable
 ssh-copy-id -i ~/.ssh/id_rsa bkorbar@prn-fairjmp01
+ssh-copy-id -i ~/.ssh/id_rsa bkorbar@prn-fairjmp02
+
 
 # install eternal terminal
 brew install MisterTea/et/et
