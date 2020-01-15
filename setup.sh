@@ -62,11 +62,11 @@ else
 fi
 
 # install vim solarized
-if [ -d "$HOME/.vim/bundle/vim-colors-solarized" ]; then
+if [ -d "$HOME/.vim/bundle/nord-vim" ]; then
   echo "Vim Solarized is already installed"
 else
-  echo "Installing Vim Solarized"
-  git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
+  echo "Installing Nord Colorscheme"
+  git clone git@github.com:arcticicestudio/nord-vim.git ~/.vim/bundle/vim-colors-solarized
 fi
 
 # install nerdtree
@@ -115,15 +115,33 @@ else
   git clone https://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/vim-better-whitespace
 fi
 
+
+if [ -d "$HOME/bin" ]; then
+  echo "BinDir already initialized"
+else
+  echo "Setting up bin paths"
+  mkdir -p "$HOME/bin"
+fi
+
+if [ -d "$HOME/bin/fonts" ]; then
+  echo "Fonts already isntalled"
+else
+  echo "Setting up bin paths"
+  git clone https://github.com/powerline/fonts.git "$HOME/bin/fonts"
+  sh "$HOME/bin/fonts/install.sh"
+fi
+
 if [ -d "$HOME/.oh-my-zsh" ]; then
   echo "oh-my-zsh already installed"
 else
   echo "Installing oh-my-zsh"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 fi
 
 # copy .vimrc from my github
-curl -LSso ~/.vimrc https://raw.github.com/ChengLong/configs/master/.vimrc
+curl -LSso ~/.vimrc https://raw.github.com/bjuncek/configs/master/.vimrc
 echo "vimrc done"
 # copy aliases
 curl -LSso ~/.zsh_aliases https://raw.github.com/bjuncek/configs/master/.zsh_aliases
