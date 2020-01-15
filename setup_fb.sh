@@ -10,11 +10,11 @@ if [ -d "$HOME/.ssh" ]; then
 else
   echo "Setting up ssh paths"
   mkdir -p "$HOME/.ssh"
-  curl -LSso ~/.ssh/config https://raw.github.com/bjuncek/configs/master/fb_ssh_config
 fi
+curl -LSso ~/.ssh/config https://raw.github.com/bjuncek/configs/master/fb_ssh_config
 
 # add ssh keys where applicable
-ssh-copy-id -i ~/.ssh/id_rsa bkorbar@ash-fairjmp01
+ssh-copy-id -i ~/.ssh/id_rsa bkorbar@prn-fairjmp01
 
 
 source $HOME/.zshrc
