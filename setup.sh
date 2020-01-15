@@ -160,6 +160,8 @@ else
   echo "Setting up bin homebrew"
   git clone https://github.com/Homebrew/brew ~/.brew
   echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> ~/.zshrc
+  echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> ~/.bash_profile
+  source ~/.bash_profile
 fi
 source ~/.zshrc
 
