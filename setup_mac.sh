@@ -130,14 +130,12 @@ else
   sh "$HOME/bin/fonts/install.sh"
 fi
 
-if [ -d "$HOME/.oh-my-zsh" ]; then
-  echo "oh-my-zsh already installed"
-else
-  echo "Installing oh-my-zsh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-fi
+echo "Installing oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # copy .vimrc from my github
@@ -153,16 +151,13 @@ curl -LSso ~/.zshrc https://raw.github.com/bjuncek/configs/master/.zshrc
 curl -LSso ~/.tmux.conf https://raw.github.com/bjuncek/configs/master/.tmux.conf
 echo " tmux done"
 
-# setup homebrew if mac
-if [ -d "$HOME/.brew" ]; then
-  echo "Brew already initialized"
-else
-  echo "Setting up bin homebrew"
-  git clone https://github.com/Homebrew/brew ~/.brew
-  echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> ~/.zshrc
-  echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> ~/.bash_profile
-  source ~/.bash_profile
-fi
+
+echo "Setting up bin homebrew"
+git clone https://github.com/Homebrew/brew ~/.brew
+echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> ~/.zshrc
+echo 'export PATH="$HOME/.brew/bin:$HOME/.brew/sbin:$PATH"' >> ~/.bash_profile
+source ~/.bash_profile
+
 source ~/.zshrc
 
 brew update
