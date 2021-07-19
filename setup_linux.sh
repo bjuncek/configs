@@ -143,7 +143,7 @@ curl -LSso ~/.zshrc https://raw.github.com/bjuncek/configs/master/.zshrc
 mkdir -p ~/.tmux/plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-curl -LSso ~/.tmux.conf https://raw.github.com/bjuncek/configs/master/.tmux.conf
+curl -LSso ~/.tmux.conf https://raw.github.com/bjuncek/configs/master/tmux.conf
 echo "tmux done"
 
 
