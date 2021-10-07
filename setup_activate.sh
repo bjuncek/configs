@@ -12,6 +12,8 @@ curl -LSso ~/.zsh_aliases https://raw.github.com/bjuncek/configs/master/.zsh_ali
 # copy .zshrc
 curl -LSso ~/.zshrc https://raw.github.com/bjuncek/configs/master/.zshrc
 
+
+conda install -c conda-forge tmux
 # copy .tmux.conf
 mkdir -p ~/.tmux/plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -20,12 +22,6 @@ curl -LSso ~/.tmux.conf https://raw.github.com/bjuncek/configs/master/tmux.conf
 echo "tmux done"
 
 
-echo "Setting up miniconda"
-curl -LSso ~/bin/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash ~/bin/miniconda.sh
-source ~/.zshrc
-
-conda install -c conda-forge tmux
 source ~/.zshrc
 
 tmux source-file ~/.tmux.conf
