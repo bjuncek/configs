@@ -1,0 +1,9 @@
+Host vgg
+  HostName vggdev9.ddns.eng.ox.ac.uk
+  User korbar
+  ProxyJump login.robots.ox.ac.uk
+
+Host triton
+    HostName triton.robots.ox.ac.uk
+    User korbar
+    ProxyJump login.robots.ox.ac.uk

@@ -130,6 +130,17 @@ else
   bash ~/bin/miniconda.sh
 fi
 
+if [ -f "$HOME/.ssh/id_rsa" ]; then
+  echo "SSH keys already initialized"
+else
+  echo "Setting up SSH Keys"
+  ssh-keygen
+  echo "Copying SSH Keys to the robots login servers"
+  ssh-copy-id korbar@login.robots.ox.ac.uk
+  echo "Adding the ssh config required"
+  curl -LSso ~/.ssh/config https://raw.github.com/bjuncek/configs/master/ssh_configs.vgg
+fi
+
 
 source ~/.bash_profile
 source ~/.zshrc
