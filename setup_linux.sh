@@ -61,7 +61,7 @@ else
   curl -LSso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 fi
 
-# install vim solarized
+# install vim nord
 if [ -d "$HOME/.vim/bundle/nord-vim" ]; then
   echo "Vim Solarized is already installed"
 else
@@ -122,13 +122,6 @@ else
   mkdir -p "$HOME/bin"
 fi
 
-if [ -d "$HOME/bin/miniconda" ]; then
-  echo "Miniconda already initialized"
-else
-  echo "Setting up miniconda"
-  curl -LSso ~/bin/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-  bash ~/bin/miniconda.sh
-fi
 
 if [ -f "$HOME/.ssh/id_rsa" ]; then
   echo "SSH keys already initialized"
@@ -142,11 +135,11 @@ else
 fi
 
 
-source ~/.bash_profile
-source ~/.zshrc
+if [ -d "$HOME/bin/miniconda" ]; then
+  echo "Miniconda already initialized"
+else
+  echo "Setting up miniconda"
+  curl -LSso ~/bin/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+  bash ~/bin/miniconda.sh
+fi
 
-conda install -c conda-forge tmux
-source ~/.bash_profile
-source ~/.zshrc
-
-tmux source-file ~/.tmux.conf

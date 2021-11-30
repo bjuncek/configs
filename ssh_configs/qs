@@ -1,0 +1,11 @@
+Host qgpu1
+     Hostname us.quansight.dev
+     Port 2221
+
+Host qgpu2
+     Hostname us.quansight.dev
+     Port 2222
+
+Host qgpu3
+     Hostname eu.quansight.dev
+     Port 2223
