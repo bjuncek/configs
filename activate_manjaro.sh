@@ -2,14 +2,9 @@
 curl -LSso $HOME/.vimrc https://raw.github.com/bjuncek/configs/master/.vimrc
 echo "vimrc done"
 
-# copy aliases to main zshrc
-cat .zsh_aliases >> ~/.zshrc
-
-# add ssh vgg configs
-cat ./ssh_configs/vgg >> ~/.ssh/config
-cat ./ssh_configs/qs >> ~/.ssh/config
 
 # setup conda install of tmux
+echo "Dealing with TMUX"
 conda install -c conda-forge tmux
 
 # get tmux plugin manager
@@ -20,3 +15,5 @@ curl -LSso ~/.tmux.conf https://raw.github.com/bjuncek/configs/master/tmux.conf
 
 tmux source-file ~/.tmux.conf
 echo "tmux done"
+
+echo "NOTE: Please run the tmux plugin loading scheme [<leader> + shift + i]"

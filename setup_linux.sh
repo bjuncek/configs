@@ -130,9 +130,21 @@ else
   ssh-keygen
   echo "Copying SSH Keys to the robots login servers"
   ssh-copy-id korbar@login.robots.ox.ac.uk
-  echo "Adding the ssh config required"
-  curl -LSso ~/.ssh/config https://raw.github.com/bjuncek/configs/master/ssh_configs.vgg
+  echo "Making the ssh config file"
+  cat ./ssh_configs/vgg >> ~/.ssh/config
+  cat ./ssh_configs/qs >> ~/.ssh/config
+  echo "verify that things are ok in a sec"
+  sleep 1
+  vim ~/.ssh/config
+  echo "Copying SSH Keys to the vgg devmachines servers"
+  ssh-copy-id korbar@vgg
 fi
+
+echo "Copy additional ZSH aliases"
+cat .zsh_aliases >> ~/.zshrc
+echo "verify that things are ok in a sec"
+sleep 1
+vim ~/.zshrc
 
 
 if [ -d "$HOME/bin/miniconda" ]; then

@@ -27,7 +27,7 @@ alias rake='noglob rake'
 
 
 # vgg
-alias vgg='ssh vgg'
-alias vggbk='ssh triton'
+alias vgg='ssh korbar@vgg'
+alias vggbk='ssh korbar@triton'
 
 # qgpus

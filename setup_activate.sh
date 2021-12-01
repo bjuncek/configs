@@ -23,6 +23,5 @@ echo "tmux done"
 
 
 source ~/.zshrc
-
 tmux source-file ~/.tmux.conf
 
