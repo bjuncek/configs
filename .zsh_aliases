@@ -34,4 +34,4 @@ alias vggbk='ssh korbar@triton'
 
 
 # pytorch dev
-alias pt_deps='conda -y install astunparse numpy ninja pyyaml setuptools cmake cffi typing_extensions future six requests dataclasses'
+alias pt_deps='conda install -y astunparse numpy ninja pyyaml setuptools cmake cffi typing_extensions future six requests dataclasses'
