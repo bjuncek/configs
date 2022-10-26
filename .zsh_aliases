@@ -31,3 +31,7 @@ alias vgg='ssh korbar@vgg'
 alias vggbk='ssh korbar@triton'
 
 # qgpus
+
+
+# pytorch dev
+alias pt_deps='conda -y install astunparse numpy ninja pyyaml setuptools cmake cffi typing_extensions future six requests dataclasses'
