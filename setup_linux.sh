@@ -10,7 +10,7 @@
 #   Install ctrlp
 #   Install vim-better-whitespace
 #   Install oh-my-zsh
-#   Set .vimrc to https://raw.github.com/ChengLong/configs/master/.vimrc
+#   Set .vimrc to https://raw.github.com/bjuncehk/configs/master/.vimrc
 #   Set .zsh_aliases to https://raw.github.com/ChengLong/configs/master/.zsh_aliases
 #   Set .zshrc to https://raw.github.com/ChengLong/configs/master/.zshrc
 #   Set pygmalion.zsh-theme to https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme
@@ -52,68 +52,15 @@ else
   exit 1
 fi
 
-# install pathogen
-if [ -f "$HOME/.vim/autoload/pathogen.vim" ]; then
-  echo "Pathogen already installed."
+# install vimplug
+if [ -f "$HOME/.vim/autoload/plug.vim" ]; then
+  echo "Vimplug already installed."
 else
-  echo "Installing pathogen"
-  mkdir -p ~/.vim/autoload ~/.vim/bundle
-  curl -LSso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+  echo "Installing vim plug"
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-# install vim nord
-if [ -d "$HOME/.vim/bundle/nord-vim" ]; then
-  echo "Vim Solarized is already installed"
-else
-  echo "Installing Nord Colorscheme"
-  git clone git@github.com:arcticicestudio/nord-vim.git ~/.vim/bundle/vim-colors-solarized
-fi
-
-# install nerdtree
-if [ -d "$HOME/.vim/bundle/nerdtree" ]; then
-  echo "Nerdtree already installed"
-else
-  echo "Installing Nerdtree"
-  git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
-fi
-
-# install nerdcommenter
-if [ -d "$HOME/.vim/bundle/nerdcommenter" ]; then
-  echo "nerdcommenter already installed"
-else
-  echo "Installing nerdcommenter"
-  git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
-fi
-
-# install AutoComplPop
-if [ -d "$HOME/.vim/bundle/AutoComplPop" ]; then
-  echo "AutoComplPop already installed"
-else
-  echo "Installing AutoComplPop"
-  git clone https://github.com/vim-scripts/AutoComplPop.git ~/.vim/bundle/AutoComplPop
-fi
-
-# install vim-fugitive
-if [ -d "$HOME/.vim/bundle/vim-fugitive" ]; then
-  echo "vim-fugitive already installed"
-else
-  echo "Installing vim-fugitive"
-  git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
-fi
-
-if [ -d "$HOME/.vim/bundle/ctrlp.vim" ]; then
-  echo "ctrlp already installed"
-else
-  echo "Installing ctrlp"
-  git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
-fi
-
-if [ -d "$HOME/.vim/bundle/vim-better-whitespace" ]; then
-  echo "vim-better-whitespace already installed"
-else
-  echo "Installing vim-better-whitespace"
-  git clone https://github.com/ntpeters/vim-better-whitespace.git ~/.vim/bundle/vim-better-whitespace
-fi
 
 if [ -d "$HOME/bin" ]; then
   echo "BinDir already initialized"
@@ -122,29 +69,26 @@ else
   mkdir -p "$HOME/bin"
 fi
 
+# if [ -f "$HOME/.ssh/id_rsa" ]; then
+#   echo "SSH keys already initialized"
+# else
+#   echo "Setting up SSH Keys"
+#   ssh-keygen
+#   echo "Copying SSH Keys to the robots login servers"
+#   ssh-copy-id korbar@login.robots.ox.ac.uk
+#   echo "Making the ssh config file"
+#   cat ./ssh_configs/vgg >> ~/.ssh/config
+#   cat ./ssh_configs/qs >> ~/.ssh/config
+#   echo "verify that things are ok in a sec"
+#   sleep 1
+#   vim ~/.ssh/config
+#   echo "Copying SSH Keys to the vgg devmachines servers"
+#   ssh-copy-id korbar@vgg
+# fi
 
-if [ -f "$HOME/.ssh/id_rsa" ]; then
-  echo "SSH keys already initialized"
-else
-  echo "Setting up SSH Keys"
-  ssh-keygen
-  echo "Copying SSH Keys to the robots login servers"
-  ssh-copy-id korbar@login.robots.ox.ac.uk
-  echo "Making the ssh config file"
-  cat ./ssh_configs/vgg >> ~/.ssh/config
-  cat ./ssh_configs/qs >> ~/.ssh/config
-  echo "verify that things are ok in a sec"
-  sleep 1
-  vim ~/.ssh/config
-  echo "Copying SSH Keys to the vgg devmachines servers"
-  ssh-copy-id korbar@vgg
-fi
-
-echo "Copy additional ZSH aliases"
-cat .zsh_aliases >> ~/.zshrc
-echo "verify that things are ok in a sec"
-sleep 1
-vim ~/.zshrc
+echo "Copying VIM config"
+curl -LSso $HOME/.vimrc https://raw.github.com/bjuncek/configs/master/.vimrc
+echo "Run :PlugInstall in new vim instance" 
 
 
 if [ -d "$HOME/bin/miniconda" ]; then
@@ -155,3 +99,12 @@ else
   bash ~/bin/miniconda.sh
 fi
 
+echo "Setting up tmux from conda"
+conda install -c conda-forge tmux
+mkdir -p ~/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+curl -LSso ~/.tmux.conf https://raw.github.com/bjuncek/configs/master/tmux.conf
+
+echo "Reload configs"
+source ~/.zshrc
+tmux source-file ~/.tmux.conf
